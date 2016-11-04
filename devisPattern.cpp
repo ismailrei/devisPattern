@@ -74,6 +74,7 @@ namespace devisPattern {
 
     TStrStrMap::const_iterator FindPath(const TStrStrMap& map, const string& path) {
       TStrStrMap::const_iterator i = map.find(path);
+      //std::this_thread::sleep_for(std::chrono::seconds(1));
                      return i;
     }
 
@@ -99,7 +100,6 @@ namespace devisPattern {
         int data;
         v8::String::Utf8Value _path(args[0]->ToString());
         auto ptr = Unwrap<devisPattern>(args.Holder());
-
         data=TFind(ptr->tMap, *_path);
         args.GetReturnValue().Set(data);
     }

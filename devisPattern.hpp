@@ -3,17 +3,17 @@
 
 #include <stdio.h>
 #include <iostream>
-#include <map>
+#include <unordered_map>
 #include <string>
 #include <algorithm>
 #include <vector>
 #include "node.h"
 #include "node_object_wrap.h"
-
+#include <thread>
 using namespace std;
 using namespace v8;
 
-typedef map<string, int, std::greater<string>> TStrStrMap;
+typedef unordered_map<string, int> TStrStrMap;
 typedef pair<string,int> TStrStrPair;
 typedef TStrStrMap::iterator it_type;
 
